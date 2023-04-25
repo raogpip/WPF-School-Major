@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Diploma.EntityFramework.Migrations
 {
     /// <inheritdoc />
+    /// //sdw
     public partial class Init : Migration
     {
         /// <inheritdoc />
