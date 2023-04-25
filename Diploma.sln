@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diploma.Domain", "Diploma.Domain\Diploma.Domain.csproj", "{ECA25231-B534-4411-80C7-C5C65C9C7579}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diploma.EntityFramework", "Diploma.EntityFramework\Diploma.EntityFramework.csproj", "{04B8B1E2-E761-4EBA-9F61-286FA463A882}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECA25231-B534-4411-80C7-C5C65C9C7579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECA25231-B534-4411-80C7-C5C65C9C7579}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECA25231-B534-4411-80C7-C5C65C9C7579}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECA25231-B534-4411-80C7-C5C65C9C7579}.Release|Any CPU.Build.0 = Release|Any CPU
+		{04B8B1E2-E761-4EBA-9F61-286FA463A882}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{04B8B1E2-E761-4EBA-9F61-286FA463A882}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{04B8B1E2-E761-4EBA-9F61-286FA463A882}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{04B8B1E2-E761-4EBA-9F61-286FA463A882}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B1F7A91-9883-46B1-B944-67FC51471490}
+	EndGlobalSection
+EndGlobal
