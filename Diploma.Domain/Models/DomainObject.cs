@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Diploma.Domain.Models
 {
-    public class Subject : DomainObject
+    public class DomainObject
     {
-        public string Name { get; set; }
+        public int Id { get; set; }
     }
 }

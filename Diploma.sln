@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diploma.Domain", "Diploma.Domain\Diploma.Domain.csproj", "{ECA25231-B534-4411-80C7-C5C65C9C7579}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Diploma.Domain", "Diploma.Domain\Diploma.Domain.csproj", "{ECA25231-B534-4411-80C7-C5C65C9C7579}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diploma.EntityFramework", "Diploma.EntityFramework\Diploma.EntityFramework.csproj", "{04B8B1E2-E761-4EBA-9F61-286FA463A882}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Diploma.EntityFramework", "Diploma.EntityFramework\Diploma.EntityFramework.csproj", "{04B8B1E2-E761-4EBA-9F61-286FA463A882}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Diploma.WPF", "Diploma.WPF\Diploma.WPF.csproj", "{A441037D-5E5D-4B99-90B1-3B2E170B31D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{04B8B1E2-E761-4EBA-9F61-286FA463A882}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{04B8B1E2-E761-4EBA-9F61-286FA463A882}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{04B8B1E2-E761-4EBA-9F61-286FA463A882}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A441037D-5E5D-4B99-90B1-3B2E170B31D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A441037D-5E5D-4B99-90B1-3B2E170B31D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A441037D-5E5D-4B99-90B1-3B2E170B31D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A441037D-5E5D-4B99-90B1-3B2E170B31D0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

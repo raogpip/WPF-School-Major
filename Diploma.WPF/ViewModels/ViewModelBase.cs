@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Diploma.Domain.Models
+namespace Diploma.WPF.ViewModels
 {
-    public class Subject : DomainObject
+    public class ViewModelBase
     {
-        public string Name { get; set; }
+
     }
 }
