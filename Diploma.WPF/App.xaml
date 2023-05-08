@@ -2,12 +2,35 @@
     x:Class="Diploma.WPF.App"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="clr-namespace:Diploma.WPF">
+    xmlns:local="clr-namespace:Diploma.WPF"
+    xmlns:viewmodels="clr-namespace:Diploma.WPF.ViewModels"
+    xmlns:views="clr-namespace:Diploma.WPF.Views">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/Styles/Common.xaml" />
             </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewmodels:ScheduleViewModel}">
+                <views:ScheduleView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodels:AttendanceViewModel}">
+                <views:AttendanceView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodels:InformationViewModel}">
+                <views:InformationView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodels:GradesStatsViewModel}">
+                <views:GradesStatsView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewmodels:ProfileViewModel}">
+                <views:ProfileView />
+            </DataTemplate>
+
         </ResourceDictionary>
     </Application.Resources>
 </Application>
