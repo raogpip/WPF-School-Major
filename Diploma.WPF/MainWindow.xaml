@@ -11,6 +11,6 @@
     Height="450"
     mc:Ignorable="d">
     <Grid>
-        <controls:NavigationBar />
+        <controls:NavigationBar DataContext="{Binding Navigator}" />
     </Grid>
 </Window>

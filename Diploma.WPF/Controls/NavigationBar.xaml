@@ -5,6 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:Diploma.WPF.Controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:nav="clr-namespace:Diploma.WPF.State.Navigators"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
@@ -14,8 +15,11 @@
             <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
 
-        <TextBlock Grid.Row="0" Text="School Major" />
-        <Grid Grid.Row="1">
+        <TextBlock
+            Grid.Row="0"
+            Background="{StaticResource light-gray-primary-brush}"
+            Text="School Major" />
+        <Grid Grid.Row="1" Background="{StaticResource dark-gray-secondary-brush}">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="auto" />
@@ -24,11 +28,31 @@
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
-            <RadioButton Grid.Column="0" Content="Розклад" />
-            <RadioButton Grid.Column="1" Content="Відвідуваність" />
-            <RadioButton Grid.Column="2" Content="Інформація" />
-            <RadioButton Grid.Column="3" Content="Оцінки та статистика" />
-            <RadioButton Grid.Column="4" Content="Профіль" />
+            <RadioButton
+                Grid.Column="0"
+                Command="{Binding UpdateCurrentViewModelCommand}"
+                CommandParameter="{x:Static nav:ViewType.Schedule}"
+                Content="Розклад" />
+            <RadioButton
+                Grid.Column="1"
+                Command="{Binding UpdateCurrentViewModelCommand}"
+                CommandParameter="{x:Static nav:ViewType.Attendance}"
+                Content="Відвідуваність" />
+            <RadioButton
+                Grid.Column="2"
+                Command="{Binding UpdateCurrentViewModelCommand}"
+                CommandParameter="{x:Static nav:ViewType.Information}"
+                Content="Інформація" />
+            <RadioButton
+                Grid.Column="3"
+                Command="{Binding UpdateCurrentViewModelCommand}"
+                CommandParameter="{x:Static nav:ViewType.GradesStats}"
+                Content="Оцінки та статистика" />
+            <RadioButton
+                Grid.Column="4"
+                Command="{Binding UpdateCurrentViewModelCommand}"
+                CommandParameter="{x:Static nav:ViewType.Profile}"
+                Content="Профіль" />
         </Grid>
     </Grid>
 </UserControl>
