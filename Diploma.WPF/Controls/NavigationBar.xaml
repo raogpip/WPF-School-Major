@@ -17,10 +17,20 @@
 
         <TextBlock
             Grid.Row="0"
+            Padding="10"
             Background="{StaticResource light-gray-primary-brush}"
+            FontSize="28"
+            Foreground="#F4EEE0"
             Text="School Major" />
-        <Grid Grid.Row="1" Background="{StaticResource dark-gray-secondary-brush}">
+        <Grid
+            Grid.Row="1"
+            Background="{StaticResource dark-gray-secondary-brush}"
+            RenderOptions.EdgeMode="Aliased">
+            <Grid.Resources>
+                <Style BasedOn="{StaticResource NavButton}" TargetType="RadioButton" />
+            </Grid.Resources>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="auto" />

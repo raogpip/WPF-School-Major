@@ -10,6 +10,6 @@ namespace Diploma.Domain.Models
     {
         public int StudentId { get; set; }
         public int LectureId { get; set; }
-
+        public bool Attended { get; set; }
     }
 }
