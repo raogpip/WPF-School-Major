@@ -24,7 +24,7 @@ namespace Diploma.WPF.State.Navigators
             set
             {
                 _currentViewModel= value;
-                OnProtertyChanged(nameof(CurrentViewModel));
+                OnPropertyChanged(nameof(CurrentViewModel));
             } 
         }
 

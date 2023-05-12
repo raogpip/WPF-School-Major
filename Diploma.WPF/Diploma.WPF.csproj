@@ -7,4 +7,13 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Diploma.Domain\Diploma.Domain.csproj" />
+    <ProjectReference Include="..\Diploma.EntityFramework\Diploma.EntityFramework.csproj" />
+  </ItemGroup>
+
 </Project>

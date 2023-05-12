@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Diploma.Domain.Models
 {
-    public class NoteS
+    public class Note : DomainObject
     {
-        public int NoteId { get; set; }
-        public int NotebookSId { get; set; }
+        public int NotebookId { get; set; }
         public string Title { get; set; }   
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }

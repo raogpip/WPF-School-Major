@@ -18,6 +18,8 @@ namespace Diploma.EntityFramework
         public DbSet<Lecture> Lectures { get; set; }    
         public DbSet<Grade> Grades { get; set; }
         public DbSet<Student_Lecture> Student_Lectures { get; set; }
+        public DbSet<Notebook> Notebooks { get; set; }
+        public DbSet<Note> Notes { get; set; }
         
         public SchoolDbContext(DbContextOptions options) : base(options) {  }
 

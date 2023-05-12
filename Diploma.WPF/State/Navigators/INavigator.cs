@@ -14,7 +14,8 @@ namespace Diploma.WPF.State.Navigators
         Attendance,
         Information,
         GradesStats,
-        Profile
+        Profile,
+        Evernote
     }
     public interface INavigator
     {

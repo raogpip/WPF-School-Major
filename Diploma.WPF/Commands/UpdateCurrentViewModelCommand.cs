@@ -47,6 +47,9 @@ namespace Diploma.WPF.Commands
                     case ViewType.Profile:
                         _navigator.CurrentViewModel = new ProfileViewModel();
                         break;
+                    case ViewType.Evernote:
+                        _navigator.CurrentViewModel = new EvernoteViewModel();
+                        break;
                 }
             }
         }

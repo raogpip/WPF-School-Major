@@ -35,6 +35,7 @@
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="*" />
             </Grid.ColumnDefinitions>
 
@@ -60,6 +61,11 @@
                 Content="Оцінки та статистика" />
             <RadioButton
                 Grid.Column="4"
+                Command="{Binding UpdateCurrentViewModelCommand}"
+                CommandParameter="{x:Static nav:ViewType.Evernote}"
+                Content="Нотатки" />
+            <RadioButton
+                Grid.Column="5"
                 Command="{Binding UpdateCurrentViewModelCommand}"
                 CommandParameter="{x:Static nav:ViewType.Profile}"
                 Content="Профіль" />

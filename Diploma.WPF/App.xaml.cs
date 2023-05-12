@@ -1,4 +1,6 @@
-﻿using Diploma.WPF.ViewModels;
+﻿using Diploma.EntityFramework;
+using Diploma.WPF.ViewModels;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -14,8 +16,16 @@ namespace Diploma.WPF
     /// </summary>
     public partial class App : Application
     {
+        private const string CONNECTION_STRING = "Server=RAOGPIP;Database=DiplomaDB;Trusted_Connection=True;TrustServerCertificate=True;";
         protected override void OnStartup(StartupEventArgs e)
         {
+            var options = new DbContextOptionsBuilder<SchoolDbContext>().UseSqlServer(CONNECTION_STRING).Options;
+
+            using (SchoolDbContext dbContext = new SchoolDbContext(options))
+            {
+                dbContext.Database.Migrate();
+            }
+
             Window window = new MainWindow();
             window.DataContext = new MainViewModel();
             window.Show();

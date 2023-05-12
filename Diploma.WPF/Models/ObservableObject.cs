@@ -11,7 +11,7 @@ namespace Diploma.WPF.Models
     {
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        protected void OnProtertyChanged(string propertyName)
+        protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
