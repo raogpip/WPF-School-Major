@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Diploma.WPF.ViewModels
 {
-    public class ProfileViewModel :ViewModelBase
+    public class ProfileViewModel : ViewModelBase
     {
     }
 }

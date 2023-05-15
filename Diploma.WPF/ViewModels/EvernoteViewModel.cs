@@ -1,22 +1,16 @@
 ﻿using Diploma.Domain.Models;
-using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Diploma.WPF.Models;
-using System.Windows;
-using Diploma.EntityFramework.Services;
-using Diploma.EntityFramework;
 using Diploma.EntityFramework.Services.NotebookProviders;
 using Diploma.EntityFramework.Services.NoteProviders;
 using Diploma.WPF.Commands;
+using System;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Linq;
+using System.Windows;
 
 namespace Diploma.WPF.ViewModels
 {
-    public class EvernoteViewModel : ObservableObject
+    public class EvernoteViewModel : ViewModelBase, INotifyPropertyChanged
     {
         private readonly INotebookService _notebookService;
         private readonly INoteService _noteService;
@@ -93,7 +87,7 @@ namespace Diploma.WPF.ViewModels
                 Name = "very long New notebook",
             };
 
-           _notebookService.InsertNotebook(notebook);
+            _notebookService.InsertNotebook(notebook);
 
             GetNotebooks();
         }
@@ -152,6 +146,11 @@ namespace Diploma.WPF.ViewModels
             IsVisible = Visibility.Collapsed;
             _notebookService.UpdateNotebook(notebook);
             GetNotebooks();
+        }
+
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

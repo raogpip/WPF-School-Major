@@ -15,7 +15,7 @@ namespace Diploma.WPF.Commands
 
         public EvernoteViewModel ViewModel { get; set; }
 
-        public EndEditingCommand(EvernoteViewModel viewModel)
+        public EndEditCommand(EvernoteViewModel viewModel)
         {
             ViewModel = viewModel;
         }

@@ -37,37 +37,38 @@
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="auto" />
                 <ColumnDefinition Width="*" />
+
             </Grid.ColumnDefinitions>
 
             <RadioButton
                 Grid.Column="0"
                 Command="{Binding UpdateCurrentViewModelCommand}"
-                CommandParameter="{x:Static nav:ViewType.Schedule}"
+                CommandParameter="Schedule"
                 Content="Розклад" />
             <RadioButton
                 Grid.Column="1"
                 Command="{Binding UpdateCurrentViewModelCommand}"
-                CommandParameter="{x:Static nav:ViewType.Attendance}"
+                CommandParameter="Attendance"
                 Content="Відвідуваність" />
             <RadioButton
                 Grid.Column="2"
                 Command="{Binding UpdateCurrentViewModelCommand}"
-                CommandParameter="{x:Static nav:ViewType.Information}"
+                CommandParameter="Information"
                 Content="Інформація" />
             <RadioButton
                 Grid.Column="3"
                 Command="{Binding UpdateCurrentViewModelCommand}"
-                CommandParameter="{x:Static nav:ViewType.GradesStats}"
+                CommandParameter="GradesStats"
                 Content="Оцінки та статистика" />
             <RadioButton
                 Grid.Column="4"
                 Command="{Binding UpdateCurrentViewModelCommand}"
-                CommandParameter="{x:Static nav:ViewType.Evernote}"
+                CommandParameter="Evernote"
                 Content="Нотатки" />
             <RadioButton
                 Grid.Column="5"
                 Command="{Binding UpdateCurrentViewModelCommand}"
-                CommandParameter="{x:Static nav:ViewType.Profile}"
+                CommandParameter="Profile"
                 Content="Профіль" />
         </Grid>
     </Grid>

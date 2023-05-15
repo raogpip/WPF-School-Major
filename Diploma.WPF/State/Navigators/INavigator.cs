@@ -1,9 +1,4 @@
 ﻿using Diploma.WPF.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Diploma.WPF.State.Navigators
@@ -14,8 +9,8 @@ namespace Diploma.WPF.State.Navigators
         Attendance,
         Information,
         GradesStats,
-        Profile,
-        Evernote
+        Evernote,
+        Profile
     }
     public interface INavigator
     {

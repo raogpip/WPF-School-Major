@@ -1,4 +1,7 @@
-﻿using Diploma.WPF.State.Navigators;
+﻿using Diploma.EntityFramework;
+using Diploma.EntityFramework.Services.NotebookProviders;
+using Diploma.EntityFramework.Services.NoteProviders;
+using Diploma.WPF.State.Navigators;
 using Diploma.WPF.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -12,6 +15,9 @@ namespace Diploma.WPF.Commands
     public class UpdateCurrentViewModelCommand : ICommand
     {
         public event EventHandler? CanExecuteChanged;
+
+        public INotebookService notebookService = new DatabaseNotebookService(new SchoolDbContextFactory());
+        public INoteService noteService = new DatabaseNoteService(new SchoolDbContextFactory());
 
         private INavigator _navigator;
 
@@ -27,28 +33,28 @@ namespace Diploma.WPF.Commands
 
         public void Execute(object? parameter)
         {
-            if(parameter is ViewType)
+            if(parameter is string)
             {
-                ViewType viewType = (ViewType)parameter;
+                var viewType = (string)parameter;
                 switch (viewType)
                 {
-                    case ViewType.Schedule:
+                    case "Schedule":
                         _navigator.CurrentViewModel = new ScheduleViewModel();
                         break;
-                    case ViewType.Attendance:
+                    case "Attendance":
                         _navigator.CurrentViewModel = new AttendanceViewModel();
                         break;
-                    case ViewType.Information:
+                    case "Information":
                         _navigator.CurrentViewModel = new InformationViewModel();
                         break;
-                    case ViewType.GradesStats:
+                    case "GradesStats":
                         _navigator.CurrentViewModel = new GradesStatsViewModel();
                         break;
-                    case ViewType.Profile:
+                    case "Profile":
                         _navigator.CurrentViewModel = new ProfileViewModel();
                         break;
-                    case ViewType.Evernote:
-                        _navigator.CurrentViewModel = new EvernoteViewModel();
+                    case "Evernote":
+                        _navigator.CurrentViewModel = new EvernoteViewModel(notebookService, noteService);
                         break;
                 }
             }

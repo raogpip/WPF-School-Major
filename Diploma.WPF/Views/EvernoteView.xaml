@@ -3,20 +3,21 @@
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
     xmlns:local="clr-namespace:Diploma.WPF.Views"
-    xmlns:vm="clr-namespace:Diploma.WPF.ViewModels"
-    xmlns:uc="clr-namespace:Diploma.WPF.Controls"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:uc="clr-namespace:Diploma.WPF.Controls"
+    xmlns:vm="clr-namespace:Diploma.WPF.ViewModels"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
 
-    <UserControl.Resources>
-        
-    </UserControl.Resources>
+    <!--<UserControl.Resources>
+        <vm:EvernoteViewModel x:Key="viewModel" />
+    </UserControl.Resources>-->
 
 
-    <DockPanel DataContext="{StaticResource viewModel}">
+    <DockPanel>
         <Menu DockPanel.Dock="Top">
             <MenuItem Header="File">
                 <MenuItem Command="{Binding NewNotebookCommand}" Header="New notebook" />
@@ -37,7 +38,7 @@
             Width="140"
             DockPanel.Dock="Left"
             ItemsSource="{Binding Notebooks}"
-            SelectedValue="{Binding SelectedNotebook, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+            SelectedValue="{Binding SelectedNotebook}">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -45,14 +46,15 @@
                         <uc:DisplayNotebook Notebook="{Binding}">
                             <uc:DisplayNotebook.ContextMenu>
                                 <ContextMenu>
-                                    <MenuItem Command="{Binding Source={StaticResource viewModel}, Path=EditCommand}" Header="Rename" />
+                                    <MenuItem Command="{Binding Path=EditCommand}" Header="Rename" />
                                 </ContextMenu>
                             </uc:DisplayNotebook.ContextMenu>
                         </uc:DisplayNotebook>
-                        <TextBox Text="{Binding Name, Mode=TwoWay}" Visibility="{Binding Source={StaticResource viewModel}, Path=IsVisible}">
+
+                        <TextBox Text="{Binding Name, Mode=TwoWay}" Visibility="{Binding Path=IsVisible}">
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="LostFocus">
-                                    <i:InvokeCommandAction Command="{Binding Source={StaticResource viewModel}, Path=EndEditingCommand}" CommandParameter="{Binding}" />
+                                    <i:InvokeCommandAction Command="{Binding Path=EndEditCommand}" CommandParameter="{Binding}" />
                                 </i:EventTrigger>
                             </i:Interaction.Triggers>
                         </TextBox>
