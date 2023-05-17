@@ -82,9 +82,10 @@ namespace Diploma.WPF.ViewModels
 
         public void CreateNotebook()
         {
+            var notebookCounter = _notebookService.GetAllNotebooks().Count();
             Notebook notebook = new Notebook
             {
-                Name = "very long New notebook",
+                Name = $"New notebook {notebookCounter + 1}",
             };
 
             _notebookService.InsertNotebook(notebook);
@@ -99,7 +100,7 @@ namespace Diploma.WPF.ViewModels
                 NotebookId = noteBookID,
                 CreatedAt = DateTime.Now,
                 UpdatedAt = DateTime.Now,
-                Title = "New Note"
+                Title =  $"Note for {DateTime.Now}"
             };
 
             _noteService.InsertNote(newNote);

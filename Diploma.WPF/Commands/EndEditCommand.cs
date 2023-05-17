@@ -1,4 +1,7 @@
 ﻿using Diploma.Domain.Models;
+using Diploma.EntityFramework.Services.NotebookProviders;
+using Diploma.EntityFramework.Services.NoteProviders;
+using Diploma.EntityFramework;
 using Diploma.WPF.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -11,9 +14,10 @@ namespace Diploma.WPF.Commands
 {
     public class EndEditCommand : ICommand
     {
+
         public event EventHandler? CanExecuteChanged;
 
-        public EvernoteViewModel ViewModel { get; set; }
+        public EvernoteViewModel ViewModel;
 
         public EndEditCommand(EvernoteViewModel viewModel)
         {

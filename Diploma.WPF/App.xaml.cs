@@ -24,10 +24,10 @@ namespace Diploma.WPF
         {
             var options = new DbContextOptionsBuilder<SchoolDbContext>().UseSqlServer(CONNECTION_STRING).Options;
 
-            //using (SchoolDbContext dbContext = new SchoolDbContext(options))
-            //{
-            //    dbContext.Database.Migrate();
-            //}
+            using (SchoolDbContext dbContext = new SchoolDbContext(options))
+            {
+                dbContext.Database.Migrate();
+            }
 
             //INotebookService notebookService = new DatabaseNotebookService(new SchoolDbContextFactory());
             //INoteService noteService = new DatabaseNoteService(new SchoolDbContextFactory());
@@ -35,8 +35,10 @@ namespace Diploma.WPF
             //var viewModel = new EvernoteViewModel(notebookService, noteService);
             //var everNoteWindow = new EvernoteView { DataContext = viewModel };
 
-            Window window = new MainWindow();
-            window.DataContext = new MainViewModel();
+            Window window = new MainWindow
+            {
+                DataContext = new MainViewModel()
+            };
             window.Show();
             base.OnStartup(e);
         }

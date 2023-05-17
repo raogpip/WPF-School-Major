@@ -16,8 +16,8 @@ namespace Diploma.WPF.Commands
     {
         public event EventHandler? CanExecuteChanged;
 
-        public INotebookService notebookService = new DatabaseNotebookService(new SchoolDbContextFactory());
-        public INoteService noteService = new DatabaseNoteService(new SchoolDbContextFactory());
+        public static INotebookService notebookService = new DatabaseNotebookService(new SchoolDbContextFactory());
+        public static INoteService noteService = new DatabaseNoteService(new SchoolDbContextFactory());
 
         private INavigator _navigator;
 

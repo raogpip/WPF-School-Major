@@ -12,6 +12,6 @@ namespace Diploma.Domain.Models
         public string Title { get; set; }   
         public DateTime CreatedAt { get; set; }
         public DateTime UpdatedAt { get; set; }
-        public string FileLocation { get; set; }
+        public string? FileLocation { get; set; }
     }
 }

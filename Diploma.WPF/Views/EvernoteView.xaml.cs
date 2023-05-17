@@ -27,10 +27,10 @@ namespace Diploma.WPF.Views
 
         public EvernoteView()
         {
-            InitializeComponent();
             DataContext = viewModel;
+            InitializeComponent();
 
-            viewModel = Resources["viewModel"] as EvernoteViewModel;
+            //viewModel = Resources["viewModel"] as EvernoteViewModel;
             viewModel.SelectedNoteChanged += ViewModel_SelectedNoteChanged;
 
             var fontFamilies = Fonts.SystemFontFamilies.OrderBy(f => f.Source);

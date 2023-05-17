@@ -1,4 +1,7 @@
-﻿using Diploma.WPF.ViewModels;
+﻿using Diploma.EntityFramework.Services.NotebookProviders;
+using Diploma.EntityFramework.Services.NoteProviders;
+using Diploma.EntityFramework;
+using Diploma.WPF.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +15,7 @@ namespace Diploma.WPF.Commands
     {
         public event EventHandler? CanExecuteChanged;
 
-        public EvernoteViewModel ViewModel { get; set; }
+        public EvernoteViewModel ViewModel;
 
         public EditCommand(EvernoteViewModel vm)
         {

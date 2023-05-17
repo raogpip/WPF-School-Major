@@ -8,6 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:uc="clr-namespace:Diploma.WPF.Controls"
     xmlns:vm="clr-namespace:Diploma.WPF.ViewModels"
+    d:DataContext="{d:DesignInstance Type=vm:EvernoteViewModel}"
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
@@ -35,6 +36,7 @@
         </StatusBar>
 
         <ListView
+            x:Name="NotebooksListView"
             Width="140"
             DockPanel.Dock="Left"
             ItemsSource="{Binding Notebooks}"
@@ -46,18 +48,18 @@
                         <uc:DisplayNotebook Notebook="{Binding}">
                             <uc:DisplayNotebook.ContextMenu>
                                 <ContextMenu>
-                                    <MenuItem Command="{Binding Path=EditCommand}" Header="Rename" />
+                                    <MenuItem Command="{Binding EditCommand}" Header="Rename" />
                                 </ContextMenu>
                             </uc:DisplayNotebook.ContextMenu>
                         </uc:DisplayNotebook>
 
-                        <TextBox Text="{Binding Name, Mode=TwoWay}" Visibility="{Binding Path=IsVisible}">
+                        <!--<TextBox Text="{Binding Name, Mode=TwoWay}" Visibility="{Binding Path=IsVisible}">
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="LostFocus">
-                                    <i:InvokeCommandAction Command="{Binding Path=EndEditCommand}" CommandParameter="{Binding}" />
+                                    <i:InvokeCommandAction Command="{Binding EndEditCommand}" CommandParameter="{Binding}" />
                                 </i:EventTrigger>
                             </i:Interaction.Triggers>
-                        </TextBox>
+                        </TextBox>-->
                     </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
