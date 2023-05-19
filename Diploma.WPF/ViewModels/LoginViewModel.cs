@@ -1,25 +1,22 @@
-﻿using Diploma.WPF.Commands;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Diploma.EntityFramework.Services.StudentProviders;
+using Diploma.WPF.Commands;
 using System.Windows.Input;
 
 namespace Diploma.WPF.ViewModels
 {
-    public class LoginViewModel : INotifyPropertyChanged
+    public class LoginViewModel : ViewModelBase
     {
-        public event PropertyChangedEventHandler? PropertyChanged;
 
         //-> Fields
 
-        private string username;
-        private string password;
+        private string username = "vitalik";
+        private string password = "vitalik";
         private string errorMessage;
         private bool isViewVisible = true;
-        
+        private IStudentService studentService;
+        private bool buttonStudentIsChecked = true;
+        private bool buttonTeacherIsChecked;
+
         //
 
         //-> Properties
@@ -48,6 +45,19 @@ namespace Diploma.WPF.ViewModels
             set { isViewVisible = value; OnPropertyChanged(nameof(IsViewVisible)); }
         }
 
+        public bool ButtonTeacherIsChecked
+        {
+            get { return buttonTeacherIsChecked; }
+            set { buttonTeacherIsChecked = value; OnPropertyChanged(nameof(ButtonTeacherIsChecked)); if (value) ButtonStudentIsChecked = false; }
+        }
+
+        public bool ButtonStudentIsChecked
+        {
+            get { return buttonStudentIsChecked; }
+            set { buttonStudentIsChecked = value; OnPropertyChanged(nameof(ButtonStudentIsChecked)); if (value) ButtonTeacherIsChecked = false; }
+        }
+
+
         //
 
         //-> Commands
@@ -56,13 +66,11 @@ namespace Diploma.WPF.ViewModels
 
         public LoginViewModel()
         {
+            studentService = new DatabaseStudentService(new EntityFramework.SchoolDbContextFactory());
             LoginCommand = new LoginCommand(this);
         }
 
 
-        public void OnPropertyChanged(string propertyName)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
+
     }
 }

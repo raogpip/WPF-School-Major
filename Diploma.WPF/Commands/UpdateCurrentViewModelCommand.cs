@@ -39,7 +39,7 @@ namespace Diploma.WPF.Commands
                 switch (viewType)
                 {
                     case "Schedule":
-                        _navigator.CurrentViewModel = new ScheduleViewModel();
+                        _navigator.CurrentViewModel = new ScheduleViewModel(new SchoolDbContextFactory());
                         break;
                     case "Attendance":
                         _navigator.CurrentViewModel = new AttendanceViewModel();

@@ -1,5 +1,6 @@
 ﻿using Diploma.Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Diploma.EntityFramework
 {
@@ -19,7 +20,7 @@ namespace Diploma.EntityFramework
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Student_Lecture>().HasNoKey();
-            
+
             modelBuilder.Entity<Student>().HasIndex(s => s.Username).IsUnique();
             modelBuilder.Entity<Student>().HasIndex(s => s.Password).IsUnique();
 
@@ -27,6 +28,26 @@ namespace Diploma.EntityFramework
             modelBuilder.Entity<Teacher>().HasIndex(t => t.Password).IsUnique();
 
             base.OnModelCreating(modelBuilder);
+        }
+
+        protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+        {
+            configurationBuilder.Properties<DateOnly>()
+                .HaveConversion<DateOnlyConverter>().HaveColumnType("date");
+
+            base.ConfigureConventions(configurationBuilder);
+        }
+
+
+        public class DateOnlyConverter : ValueConverter<DateOnly, DateTime>
+        {
+            /// <summary>
+            /// Creates a new instance of this converter.
+            /// </summary>
+            public DateOnlyConverter() : base(
+                    d => d.ToDateTime(TimeOnly.MinValue),
+                    d => DateOnly.FromDateTime(d))
+            { }
         }
     }
 }

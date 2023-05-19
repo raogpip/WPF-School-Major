@@ -8,7 +8,9 @@ namespace Diploma.Domain.Models
 {
     public class Lecture : DomainObject
     {
-        public DateTime Date { get; set; }
+        public DateOnly Date { get; set; }
+        public TimeSpan StartTime { get; set; }
+        public TimeSpan EndTime { get; set; }
         public int AudienceNumber { get; set; }
         public int TeacherId { get; set; }
         public int SubjectId { get; set; }

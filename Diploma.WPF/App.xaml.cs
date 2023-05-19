@@ -29,18 +29,33 @@ namespace Diploma.WPF
                 dbContext.Database.Migrate();
             }
 
+            var loginView = new LoginView();
+            loginView.Show();
+            loginView.IsVisibleChanged += (s, ev) =>
+            {
+                if (loginView.IsVisible == false && loginView.IsLoaded)
+                {
+                    var mainView = new MainWindow
+                    {
+                        DataContext = new MainViewModel()
+                    };
+                    mainView.Show();
+                    loginView.Close();
+                }
+            };
+
             //INotebookService notebookService = new DatabaseNotebookService(new SchoolDbContextFactory());
             //INoteService noteService = new DatabaseNoteService(new SchoolDbContextFactory());
 
             //var viewModel = new EvernoteViewModel(notebookService, noteService);
             //var everNoteWindow = new EvernoteView { DataContext = viewModel };
 
-            Window window = new MainWindow
-            {
-                DataContext = new MainViewModel()
-            };
-            window.Show();
             base.OnStartup(e);
+        }
+
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            
         }
     }
 }

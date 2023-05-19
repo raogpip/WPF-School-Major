@@ -14,7 +14,7 @@ namespace Diploma.EntityFramework
         public SchoolDbContext CreateDbContext(string[] args = null)
         {
             var options = new DbContextOptionsBuilder<SchoolDbContext>();
-            options.UseSqlServer("Server=.;Database=DiplomaDB;Trusted_Connection=True;TrustServerCertificate=True;");
+            options.UseSqlServer("Server=.;Database=DiplomaDB;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=true;");
             return new SchoolDbContext(options.Options);    
         }
     }
