@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Diploma.WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,15 @@ namespace Diploma.WPF.Views
     /// </summary>
     public partial class ScheduleView : UserControl
     {
+        private ScheduleViewModel _viewModel;
         public ScheduleView()
         {
+            _viewModel = new ScheduleViewModel(new EntityFramework.SchoolDbContextFactory());
             InitializeComponent();
+            if(_viewModel.CurrentUserAccount.Role == "Teacher")
+            {
+                teacherOnlyStackPanel.Visibility = Visibility.Visible;
+            }
         }
     }
 }

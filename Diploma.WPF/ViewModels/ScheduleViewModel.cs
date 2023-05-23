@@ -2,14 +2,11 @@
 using Diploma.EntityFramework;
 using Diploma.EntityFramework.Services.StudentProviders;
 using Diploma.EntityFramework.Services.TeacherProviders;
-using Microsoft.CognitiveServices.Speech.Transcription;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows;
 
 namespace Diploma.WPF.ViewModels
@@ -17,10 +14,18 @@ namespace Diploma.WPF.ViewModels
     public class ScheduleViewModel : ViewModelBase
     {
         private readonly SchoolDbContextFactory _dbContextFactory;
-		private DateTime selectedDate;
+        private DateTime selectedDate;
         private Account _currentUserAccount;
         private IStudentService studentService;
         private ITeacherService teacherService;
+        private string selectedStudent;
+
+        public string SelectedStudent
+        {
+            get { return selectedStudent; }
+            set { selectedStudent = value; OnPropertyChanged(nameof(SelectedStudent)); }
+        }
+
 
         public Account CurrentUserAccount
         {
@@ -29,11 +34,11 @@ namespace Diploma.WPF.ViewModels
         }
 
         public DateTime SelectedDate
-		{
-			get { return selectedDate; }
-			set { selectedDate = value; OnPropertyChanged(nameof(SelectedDate)); GetLectures(); }
-		}
-        
+        {
+            get { return selectedDate; }
+            set { selectedDate = value; OnPropertyChanged(nameof(SelectedDate)); GetLectures(); }
+        }
+
 
         public ObservableCollection<Lecture> Lectures { get; set; }
 
@@ -42,14 +47,14 @@ namespace Diploma.WPF.ViewModels
             _dbContextFactory = dbContextFactory;
             studentService = new DatabaseStudentService(new SchoolDbContextFactory());
             teacherService = new DatabaseTeacherService(new SchoolDbContextFactory());
-            Lectures = new ObservableCollection<Lecture>();    
+            Lectures = new ObservableCollection<Lecture>();
             GetCurrentUser();
         }
 
         private void GetCurrentUser()
         {
             var student = studentService.GetStudentByUsername(Thread.CurrentPrincipal.Identity.Name);
-            if(student == null)
+            if (student == null)
             {
                 var teacher = teacherService.GetTeacherByUsername(Thread.CurrentPrincipal.Identity.Name);
                 CurrentUserAccount = new Account
@@ -57,17 +62,19 @@ namespace Diploma.WPF.ViewModels
                     Id = teacher.Id,
                     Username = teacher.Username,
                     Password = teacher.Password,
-                    DisplayName = $"Hello, {teacher.Username} :3"
+                    DisplayName = $"Hello, {teacher.Username} :3",
+                    Role = "Teacher"
                 };
             }
-            else if(student != null)
+            else if (student != null)
             {
                 CurrentUserAccount = new Account
                 {
                     Id = student.Id,
                     Username = student.Username,
                     Password = student.Password,
-                    DisplayName = $"Hello, {student.Username} :3"
+                    DisplayName = $"Hello, {student.Username} :3",
+                    Role = "Student"
                 };
             }
             else
@@ -76,10 +83,10 @@ namespace Diploma.WPF.ViewModels
                 Application.Current.Shutdown();
             }
         }
-        
+
         private void GetLectures()
         {
-            using(SchoolDbContext dbContext = _dbContextFactory.CreateDbContext())
+            using (SchoolDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
 
                 //шось таке
@@ -95,19 +102,35 @@ namespace Diploma.WPF.ViewModels
                 //                  Date = lect.Date,
                 //                  AudienceNumber = lect.AudienceNumber
                 //              };
-
-                var lectures = from l in dbContext.Lectures
-                               join sl in dbContext.Student_Lectures on l.Id equals sl.LectureId
-                               where sl.StudentId == CurrentUserAccount.Id && l.Date == DateOnly.FromDateTime(SelectedDate)
-                               select l;
-
-                Lectures.Clear();
-                foreach (var lecture in lectures)
+                if (CurrentUserAccount.Role == "Student")
                 {
-                    Lectures.Add(lecture);
+                    var lectures = from l in dbContext.Lectures
+                                   join sl in dbContext.Student_Lectures on l.Id equals sl.LectureId
+                                   where sl.StudentId == CurrentUserAccount.Id && l.Date == DateOnly.FromDateTime(SelectedDate)
+                                   select l;
+
+                    Lectures.Clear();
+                    foreach (var lecture in lectures)
+                    {
+                        Lectures.Add(lecture);
+                    }
+                }
+                if(CurrentUserAccount.Role == "Teacher")
+                {
+                    var selectedStudent = dbContext.Students.FirstOrDefault(s => s.Username == SelectedStudent);
+
+                    var lectures = from l in dbContext.Lectures
+                                   join sl in dbContext.Student_Lectures on l.Id equals sl.LectureId
+                                   where sl.StudentId == selectedStudent.Id && l.Date == DateOnly.FromDateTime(SelectedDate)
+                                   select l;
+
+                    Lectures.Clear();
+                    foreach (var lecture in lectures)
+                    {
+                        Lectures.Add(lecture);
+                    }
                 }
             }
-           
         }
     }
 }

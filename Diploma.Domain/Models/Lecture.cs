@@ -13,6 +13,6 @@ namespace Diploma.Domain.Models
         public TimeSpan EndTime { get; set; }
         public int AudienceNumber { get; set; }
         public int TeacherId { get; set; }
-        public int SubjectId { get; set; }
+        public string SubjectName { get; set; }
     }
 }

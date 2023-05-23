@@ -24,5 +24,37 @@ namespace Diploma.WPF.Views
         {
             InitializeComponent();
         }
+
+        public void HideAll()
+        {
+            scheduleInfo.Visibility = Visibility.Collapsed;
+            attendanceInfo.Visibility = Visibility.Collapsed;
+            gradesInfo.Visibility = Visibility.Collapsed;
+            notesInfo.Visibility = Visibility.Collapsed;
+        }
+
+        private void notesButton_Click(object sender, RoutedEventArgs e)
+        {
+            HideAll();
+            notesInfo.Visibility = Visibility.Visible;
+        }
+
+        private void gradesButton_Click(object sender, RoutedEventArgs e)
+        {
+            HideAll();
+            gradesInfo.Visibility = Visibility.Visible;
+        }
+
+        private void attendanceButton_Click(object sender, RoutedEventArgs e)
+        {
+            HideAll();
+            attendanceInfo.Visibility = Visibility.Visible;
+        }
+
+        private void scheduleButton_Click(object sender, RoutedEventArgs e)
+        {
+            HideAll();
+            scheduleInfo.Visibility = Visibility.Visible;
+        }
     }
 }

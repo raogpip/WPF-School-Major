@@ -24,5 +24,10 @@ namespace Diploma.WPF.Controls
         {
             InitializeComponent();
         }
+
+        private void ImageAwesome_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
     }
 }

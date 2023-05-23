@@ -19,8 +19,8 @@
 
 
     <DockPanel>
-        <Menu DockPanel.Dock="Top">
-            <MenuItem Header="File">
+        <Menu Background="#393646" DockPanel.Dock="Top">
+            <MenuItem Foreground="#F4EEE0" Header="File">
                 <MenuItem Command="{Binding NewNotebookCommand}" Header="New notebook" />
                 <MenuItem
                     Command="{Binding NewNoteCommand}"
@@ -30,7 +30,7 @@
         </Menu>
 
         <StatusBar DockPanel.Dock="Bottom">
-            <StatusBarItem>
+            <StatusBarItem Background="#393646" Foreground="#F4eee0">
                 <TextBlock x:Name="statusTextBlock" />
             </StatusBarItem>
         </StatusBar>
@@ -38,6 +38,7 @@
         <ListView
             x:Name="NotebooksListView"
             Width="140"
+            Background="#393646"
             DockPanel.Dock="Left"
             ItemsSource="{Binding Notebooks}"
             SelectedValue="{Binding SelectedNotebook}">
@@ -67,6 +68,7 @@
 
         <ListView
             Width="200"
+            Background="#393646"
             DockPanel.Dock="Left"
             ItemsSource="{Binding Notes}"
             SelectedValue="{Binding SelectedNote, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
@@ -77,21 +79,31 @@
             </ListView.ItemTemplate>
         </ListView>
 
-        <ToolBarTray DockPanel.Dock="Top">
-            <ToolBar>
+        <ToolBarTray Background="#393646" DockPanel.Dock="Top">
+            <ToolBar Background="#393646">
                 <Button
                     x:Name="Speech"
                     Margin="5,0,0,0"
                     Click="Speech_Click"
-                    Content="Speech" />
+                    Content="Speech"
+                    Foreground="#F4EEE0" />
                 <ToggleButton x:Name="boldButton" Click="boldButton_Click">
-                    <TextBlock FontWeight="Bold" Text="B" />
+                    <TextBlock
+                        FontWeight="Bold"
+                        Foreground="#F4EEE0"
+                        Text="B" />
                 </ToggleButton>
                 <ToggleButton x:Name="italicButton" Click="italicButton_Click">
-                    <TextBlock FontStyle="Italic" Text="I" />
+                    <TextBlock
+                        FontStyle="Italic"
+                        Foreground="#F4EEE0"
+                        Text="I" />
                 </ToggleButton>
                 <ToggleButton x:Name="underlineButton" Click="underlineButton_Click">
-                    <TextBlock Text="U" TextDecorations="Underline" />
+                    <TextBlock
+                        Foreground="#F4EEE0"
+                        Text="U"
+                        TextDecorations="Underline" />
                 </ToggleButton>
                 <ComboBox
                     x:Name="fontFamilyComboBox"
@@ -105,7 +117,8 @@
                 <Button
                     Margin="5,0,0,0"
                     Click="ButtonSave_Click"
-                    Content="Save" />
+                    Content="Save"
+                    Foreground="#F4EEE0" />
             </ToolBar>
         </ToolBarTray>
 

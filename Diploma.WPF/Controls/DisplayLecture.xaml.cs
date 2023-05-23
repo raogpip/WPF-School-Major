@@ -22,7 +22,7 @@ namespace Diploma.WPF.Controls
         public string LectureName
         {
             get { return lectureName; }
-            set { lectureName = value; OnPropertyChanged(nameof(LectureName)); GetLectureName(); }
+            set { lectureName = value; OnPropertyChanged(nameof(LectureName)); }//GetLectureName(); }
         }
 
 
@@ -43,36 +43,8 @@ namespace Diploma.WPF.Controls
         public DisplayLecture()
         {
             InitializeComponent();
-            GetLectureName();
         }
 
-        private void GetLectureName()
-        {
-            if(Lecture != null)
-            {
-                switch (Lecture.SubjectId)
-                {
-                    case 1:
-                        LectureName = "Математика";
-                        break;
-                    case 2:
-                        LectureName = "Українська мова";
-                        break;
-                    case 3:
-                        LectureName = "Фізика";
-                        break;
-                    case 4:
-                        LectureName = "Фізкультура";
-                        break;
-                    case 5:
-                        LectureName = "Малювання";
-                        break;
-                    default:
-                        LectureName = "UNKNOWN";
-                        break;
-                }
-            }
-        }
 
         public event PropertyChangedEventHandler? PropertyChanged;
         public void OnPropertyChanged(string propertyName)

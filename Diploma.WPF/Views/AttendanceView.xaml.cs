@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Diploma.EntityFramework;
+using Diploma.WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,16 @@ namespace Diploma.WPF.Views
     /// </summary>
     public partial class AttendanceView : UserControl
     {
+        private AttendanceViewModel _viewModel;
+
         public AttendanceView()
         {
+            _viewModel = new AttendanceViewModel();
             InitializeComponent();
+            if(_viewModel.CurrentUserAccount.Role == "Teacher")
+            {
+                teacherOnlyStackPanel.Visibility = Visibility.Visible;
+            }
         }
     }
 }

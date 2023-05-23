@@ -10,22 +10,41 @@
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
-    <Grid>
-        <StackPanel Orientation="Vertical">
+    <Grid Background="#393646">
+        <StackPanel
+            Width="150"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Orientation="Vertical">
 
-            <TextBlock
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                FontFamily="Monserrat"
-                FontSize="40"
-                Text="{Binding CurrentUserAccount.Username}" />
-            <TextBlock
-                Margin="0,10,0,0"
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center"
-                FontFamily="Monserrat"
-                FontSize="40"
-                Text="{Binding CurrentUserAccount.Id}" />
+            <Border
+                Width="100"
+                Height="100"
+                Margin="0,0,0,10"
+                Background="#fff"
+                CornerRadius="50" />
+            <TextBlock Foreground="{StaticResource light-gray-primary-brush}" Text="Ім'я" />
+            <StackPanel Orientation="Horizontal">
+                <TextBlock
+                    Background="#393646"
+                    FontFamily="Monserrat"
+                    FontSize="20"
+                    Foreground="#F4EEE0"
+                    Text="{Binding CurrentUserAccount.Username, FallbackValue=Username}" />
+
+            </StackPanel>
+            <TextBlock Foreground="{StaticResource light-gray-primary-brush}" Text="Роль" />
+            <StackPanel Orientation="Horizontal">
+
+                <TextBlock
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    FontFamily="Monserrat"
+                    FontSize="20"
+                    Foreground="#F4EEE0"
+                    Text="{Binding CurrentUserAccount.Role, FallbackValue=UserRole}" />
+
+            </StackPanel>
 
         </StackPanel>
     </Grid>

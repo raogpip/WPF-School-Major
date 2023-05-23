@@ -1,6 +1,7 @@
 ﻿using Diploma.Domain.Models;
 using Diploma.EntityFramework.Services.StudentProviders;
 using Diploma.EntityFramework.Services.TeacherProviders;
+using Diploma.WPF.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,8 @@ namespace Diploma.WPF.ViewModels
 			set { _currentUserAccount = value; OnPropertyChanged(nameof(CurrentUserAccount)); }
 		}
 
-		public ProfileViewModel()
+
+        public ProfileViewModel()
 		{
 			studentService = new DatabaseStudentService(new EntityFramework.SchoolDbContextFactory());
 			teacherService = new DatabaseTeacherService(new EntityFramework.SchoolDbContextFactory());
@@ -41,7 +43,8 @@ namespace Diploma.WPF.ViewModels
 					Id = teacher.Id,
                     Username = teacher.Username,
 					Password = teacher.Password,
-                    DisplayName = $"Hello, {teacher.Username} :3"
+                    DisplayName = $"Hello, {teacher.Username} :3",
+					Role = "Вчитель"
                 };
             }
 			else if(user != null)
@@ -51,9 +54,10 @@ namespace Diploma.WPF.ViewModels
 					Id = user.Id,
 					Username = user.Username,
 					Password = user.Password,
-					DisplayName = $"Hello, {user.Username} :3"
-				};
-			}
+					DisplayName = $"Hello, {user.Username} :3",
+					Role = "Учень"
+                };
+            }
 			else
 			{
 				MessageBox.Show("Invalid user, not logged in");

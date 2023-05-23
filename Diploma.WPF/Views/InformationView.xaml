@@ -1,12 +1,94 @@
-﻿<UserControl x:Class="Diploma.WPF.Views.InformationView"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:Diploma.WPF.Views"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+﻿<UserControl
+    x:Class="Diploma.WPF.Views.InformationView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Diploma.WPF.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    mc:Ignorable="d">
+    <Grid Background="#393646">
+        <Grid Margin="20">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="3*" />
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Orientation="Vertical">
+                <RadioButton
+                    x:Name="scheduleButton"
+                    Margin="0,50,0,0"
+                    Click="scheduleButton_Click"
+                    Content="Розклад"
+                    IsChecked="True"
+                    Style="{StaticResource NavButton}" />
+                <RadioButton
+                    x:Name="attendanceButton"
+                    Click="attendanceButton_Click"
+                    Content="Відвідуваність"
+                    Style="{StaticResource NavButton}" />
+                <RadioButton
+                    x:Name="gradesButton"
+                    Click="gradesButton_Click"
+                    Content="Оцінки та статистика"
+                    Style="{StaticResource NavButton}" />
+                <RadioButton
+                    x:Name="notesButton"
+                    Click="notesButton_Click"
+                    Content="Нотатки"
+                    Style="{StaticResource NavButton}" />
+            </StackPanel>
+            <Grid Grid.Column="1" Background="{StaticResource light-gray-primary-brush}">
+                <!--  smth  -->
+                <TextBlock
+                    x:Name="scheduleInfo"
+                    Margin="10"
+                    FontSize="18"
+                    Foreground="#F4eee0"
+                    TextWrapping="Wrap"
+                    Visibility="Visible">
+                    Для користування сторінкою розклад потрібно обрати дату за допомогою віджету календаря,
+                    перемикаючи місяці та роки при необхідності, можна переглянути Ваш роздклад занять у
+                    конкретний день.
+                    По правій стороні екрану з'явиться список лекцій, якщо вони є.
+                    Якщо лекції у даний день відсутні список залишиться пустим.
+                </TextBlock>
+                <TextBlock
+                    x:Name="attendanceInfo"
+                    Margin="10"
+                    FontSize="18"
+                    Foreground="#F4eee0"
+                    TextWrapping="Wrap"
+                    Visibility="Collapsed">
+                    Користування вікном відвідуваності схоже на вікно "Розклад".
+                    Для того щоб переглянути відвідуваність за конкретний день потрібно обрати день за допомогою календаря.
+                    У списку у правій частині екрану з'явиться інформація про присутність студента на лекціях у цей день.
+                </TextBlock>
+                <TextBlock
+                    x:Name="gradesInfo"
+                    Margin="10"
+                    FontSize="18"
+                    Foreground="#F4eee0"
+                    TextWrapping="Wrap"
+                    Visibility="Collapsed">
+                    У вікні "Оцінки та Статистика" відображається загальна статистика для студента.
+                    Частина відображається одразу, а після вибору предмету зі списку відображається решта - статистика конкретного предмета(кількість оцінок).
+                </TextBlock>
+                <TextBlock
+                    x:Name="notesInfo"
+                    Margin="10"
+                    FontSize="18"
+                    Foreground="#F4eee0"
+                    TextWrapping="Wrap"
+                    Visibility="Collapsed">
+                    У вікні "Нотатки" можна створювати нотатники та робити записи.
+                    Для того щоб створити нотатник потрібно натиснути на кнопку "File" у верхній частині екрану та у випливаючому меню обрати опцію "New notebook".
+                    Після створення нотатника для того щоб створити запис у ньому потрібно обрати потрібний нотатник зі списку існуючих, який знаходиться у лівій частині екрану.
+                    Далі натиснути на ту ж саму кнопку "File", але цього разу обрати кнопку "New note". Далі у правій частині екрану можна користуватися з поглибленого редактору тексту. При натисканні кнопки "Save" у редакторі, запис зберігається у файл.
+                </TextBlock>
+
+            </Grid>
+        </Grid>
     </Grid>
 </UserControl>

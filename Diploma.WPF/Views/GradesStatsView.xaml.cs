@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Diploma.WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,15 @@ namespace Diploma.WPF.Views
     /// </summary>
     public partial class GradesStatsView : UserControl
     {
+        private GradesStatsViewModel _vm;
         public GradesStatsView()
         {
+            _vm = new GradesStatsViewModel();
             InitializeComponent();
+            if(_vm.CurrentUserAccount.Role == "Teacher")
+            {
+                teacherOnlyStackPanel.Visibility = Visibility.Visible;
+            }
         }
     }
 }
