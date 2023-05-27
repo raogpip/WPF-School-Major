@@ -16,7 +16,7 @@ namespace Diploma.WPF.ViewModels
         private Account _currentUserAccount;
         private IStudentService studentService;
         private ITeacherService teacherService;
-        private int gradeCount;
+        private int gradeCount = 0;
         private double average;
         private string selectedSubject;
         private int count5 = 0;
@@ -218,14 +218,12 @@ namespace Diploma.WPF.ViewModels
 
         public void CalculateGradesData()
         {
-
             using (SchoolDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
                 double sum = 0.0;
 
                 if (CurrentUserAccount.Role == "Student")
                 {
-
                     GradeCount = dbContext.Grades.Select(g => g.StudentId == CurrentUserAccount.Id).Count();
                     List<Grade> grades = dbContext.Grades.Where(g => g.StudentId == CurrentUserAccount.Id).ToList();
 
@@ -240,7 +238,6 @@ namespace Diploma.WPF.ViewModels
                     var selectedStudent = dbContext.Students.FirstOrDefault(s => s.Username == SelectedStudent);
                     if (selectedStudent != null)
                     {
-
                         GradeCount = dbContext.Grades.Select(g => g.StudentId == selectedStudent.Id).Count();
                         List<Grade> grades = dbContext.Grades.Where(g => g.StudentId == selectedStudent.Id).ToList();
 

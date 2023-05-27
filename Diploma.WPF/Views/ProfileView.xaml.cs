@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Diploma.WPF.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Diploma.WPF.Views
 {
@@ -20,9 +22,15 @@ namespace Diploma.WPF.Views
     /// </summary>
     public partial class ProfileView : UserControl
     {
+        private ProfileViewModel vm;
         public ProfileView()
         {
+            vm = new ProfileViewModel();
             InitializeComponent();
+            if(vm.CurrentUserAccount.Sex == "F")
+            {
+                avatar.ImageSource = (ImageSource)Resources["female_avatarDrawingImage"];
+            }
         }
     }
 }

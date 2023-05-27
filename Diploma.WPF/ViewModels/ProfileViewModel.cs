@@ -44,7 +44,9 @@ namespace Diploma.WPF.ViewModels
                     Username = teacher.Username,
 					Password = teacher.Password,
                     DisplayName = $"Hello, {teacher.Username} :3",
-					Role = "Вчитель"
+					Role = "Вчитель",
+					DateOfBirth = teacher.DateOfBirth,
+					Sex = teacher.Sex
                 };
             }
 			else if(user != null)
@@ -55,7 +57,9 @@ namespace Diploma.WPF.ViewModels
 					Username = user.Username,
 					Password = user.Password,
 					DisplayName = $"Hello, {user.Username} :3",
-					Role = "Учень"
+					Role = "Учень",
+					DateOfBirth = user.DateOfBirth,
+					Sex = user.Sex
                 };
             }
 			else

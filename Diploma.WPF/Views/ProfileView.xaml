@@ -10,6 +10,28 @@
     d:DesignHeight="450"
     d:DesignWidth="800"
     mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <DrawingImage x:Key="female_avatarDrawingImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup ClipGeometry="M0,0 V300 H300 V0 H0 Z">
+                    <DrawingGroup Opacity="1" Transform="0.1,0,0,-0.1,0,300">
+                        <GeometryDrawing Brush="#FF000000" Geometry="F1 M300,300z M0,0z M1449,2717C1387,2703 1331,2670 1284,2621 1263,2598 1246,2590 1220,2590 1170,2589 1111,2559 1068,2512 984,2419 960,2322 925,1950 886,1537 928,1331 1065,1274 1084,1267 1127,1260 1161,1260L1223,1260 1218,1150C1214,1049 1211,1034 1179,973 1134,884 1108,870 880,819 573,751 455,706 377,627 328,578 285,501 275,448L268,410 1525,410 2782,410 2776,438C2764,487 2720,567 2680,613 2600,704 2483,751 2162,820 1959,864 1950,867 1903,916 1851,970 1831,1032 1823,1161L1817,1258 1897,1261C1964,1264 1983,1269 2017,1293 2115,1361 2152,1531 2130,1810 2117,1971 2085,2231 2068,2300 2047,2389 1982,2508 1920,2570 1803,2687 1600,2750 1449,2717z" />
+                    </DrawingGroup>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+
+        <DrawingImage x:Key="male_avatarDrawingImage">
+            <DrawingImage.Drawing>
+                <DrawingGroup ClipGeometry="M0,0 V300 H300 V0 H0 Z">
+                    <DrawingGroup Opacity="1" Transform="0.1,0,0,-0.1,0,300">
+                        <GeometryDrawing Brush="#FF000000" Geometry="F1 M300,300z M0,0z M1320,2594C1255,2581 1171,2547 1136,2518 1096,2486 1050,2402 1050,2363 1050,2350 1036,2331 1016,2315 949,2264 930,2169 950,1978 962,1864 962,1861 940,1832 921,1806 918,1794 924,1752 940,1628 979,1524 1016,1508 1034,1500 1042,1483 1051,1441 1057,1410 1081,1345 1103,1295 1141,1211 1144,1198 1148,1099 1151,995 1151,993 1128,986 1115,983 1095,980 1083,980 1059,980 1056,971 1029,848 1023,817 1014,787 1011,782 1008,777 832,705 621,622 334,509 229,464 208,442 186,421 173,390 155,319 141,267 130,222 130,218 130,213 743,210 1491,210L2853,210 2847,243C2834,326 2799,420 2771,446 2752,464 2618,523 2369,622 2163,705 1992,776 1989,782 1986,787 1977,817 1971,848 1944,971 1941,980 1917,980 1852,981 1850,984 1850,1089 1850,1179 1852,1190 1890,1277 1912,1327 1938,1398 1947,1434 1958,1478 1968,1501 1980,1505 2009,1514 2030,1556 2056,1657 2085,1774 2086,1800 2059,1834 2039,1860 2039,1864 2050,2038 2056,2135 2062,2227 2062,2242 2065,2322 1937,2479 1828,2532 1730,2580 1667,2592 1500,2595 1415,2597 1334,2596 1320,2594z" />
+                    </DrawingGroup>
+                </DrawingGroup>
+            </DrawingImage.Drawing>
+        </DrawingImage>
+    </UserControl.Resources>
     <Grid Background="#393646">
         <StackPanel
             Width="150"
@@ -18,33 +40,49 @@
             Orientation="Vertical">
 
             <Border
-                Width="100"
-                Height="100"
+                Width="110"
+                Height="110"
                 Margin="0,0,0,10"
-                Background="#fff"
-                CornerRadius="50" />
+                CornerRadius="55">
+                <Border.Background>
+                    <ImageBrush x:Name="avatar" ImageSource="{StaticResource male_avatarDrawingImage}" />
+                </Border.Background>
+            </Border>
             <TextBlock Foreground="{StaticResource light-gray-primary-brush}" Text="Ім'я" />
-            <StackPanel Orientation="Horizontal">
-                <TextBlock
-                    Background="#393646"
-                    FontFamily="Monserrat"
-                    FontSize="20"
-                    Foreground="#F4EEE0"
-                    Text="{Binding CurrentUserAccount.Username, FallbackValue=Username}" />
+            <TextBlock
+                Background="#393646"
+                FontFamily="Monserrat"
+                FontSize="20"
+                Foreground="#F4EEE0"
+                Text="{Binding CurrentUserAccount.Username, FallbackValue=Username}" />
 
-            </StackPanel>
             <TextBlock Foreground="{StaticResource light-gray-primary-brush}" Text="Роль" />
-            <StackPanel Orientation="Horizontal">
 
-                <TextBlock
-                    HorizontalAlignment="Center"
-                    VerticalAlignment="Center"
-                    FontFamily="Monserrat"
-                    FontSize="20"
-                    Foreground="#F4EEE0"
-                    Text="{Binding CurrentUserAccount.Role, FallbackValue=UserRole}" />
+            <TextBlock
+                VerticalAlignment="Center"
+                FontFamily="Monserrat"
+                FontSize="20"
+                Foreground="#F4EEE0"
+                Text="{Binding CurrentUserAccount.Role, FallbackValue=UserRole}" />
 
-            </StackPanel>
+            <TextBlock Foreground="{StaticResource light-gray-primary-brush}" Text="Дата народження" />
+
+            <TextBlock
+                VerticalAlignment="Center"
+                FontFamily="Monserrat"
+                FontSize="20"
+                Foreground="#F4EEE0"
+                Text="{Binding CurrentUserAccount.DateOfBirth, FallbackValue=01-01-1001}" />
+
+            <TextBlock Foreground="{StaticResource light-gray-primary-brush}" Text="Стать" />
+
+            <TextBlock
+                VerticalAlignment="Center"
+                FontFamily="Monserrat"
+                FontSize="20"
+                Foreground="#F4EEE0"
+                Text="{Binding CurrentUserAccount.Sex, FallbackValue=M}" />
+
 
         </StackPanel>
     </Grid>

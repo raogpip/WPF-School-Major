@@ -102,7 +102,7 @@
                         HorizontalAlignment="Center"
                         FontSize="70"
                         Foreground="#F4EEE0"
-                        Text="{Binding GradeCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=20}" />
+                        Text="{Binding GradeCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, FallbackValue=0}" />
                     <TextBlock
                         HorizontalAlignment="Center"
                         FontSize="18"

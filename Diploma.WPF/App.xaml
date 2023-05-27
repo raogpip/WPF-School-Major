@@ -12,7 +12,9 @@
                 <ResourceDictionary Source="/Styles/Common.xaml" />
                 <ResourceDictionary Source="/Styles/NavigationBar.xaml" />
                 <ResourceDictionary Source="/Styles/ScheduleWidget.xaml" />
+              
             </ResourceDictionary.MergedDictionaries>
+
 
             <DataTemplate DataType="{x:Type viewmodels:ScheduleViewModel}">
                 <views:ScheduleView />
