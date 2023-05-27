@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Diploma.WPF.ViewModels.AttendanceViewModel">
+    <Position X="30.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAACAAASABCAAAAQACAAAAAAAAAwAAAAIAABAAAA=</HashCode>
+      <FileName>ViewModels\AttendanceViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diploma.WPF.ViewModels.ViewModelBase" Collapsed="true">
+    <Position X="28.25" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\ViewModelBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Diploma.WPF.ViewModels.EvernoteViewModel">
+    <Position X="20.75" Y="5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAggAAAACBBQUQFgMBEAABAAgAAAAAIQAAAAAAAAABA=</HashCode>
+      <FileName>ViewModels\EvernoteViewModel.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Diploma.WPF.ViewModels.GradesStatsViewModel">
+    <Position X="26.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACEEABAAAACBICAABQAACAQAAIAAAAwAAAAIAABgABA=</HashCode>
+      <FileName>ViewModels\GradesStatsViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diploma.WPF.ViewModels.InformationViewModel">
+    <Position X="30.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\InformationViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diploma.WPF.ViewModels.LoginViewModel">
+    <Position X="22.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQBAAAEAgAAABAAAAQAACAEAgAAAAQACAAEAAgCAAAA=</HashCode>
+      <FileName>ViewModels\LoginViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diploma.WPF.ViewModels.MainViewModel">
+    <Position X="28.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ViewModels\MainViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diploma.WPF.ViewModels.ProfileViewModel">
+    <Position X="32.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAACAAAAAAAAACAAAAAAAAAQAAAAAAABAAAA=</HashCode>
+      <FileName>ViewModels\ProfileViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diploma.WPF.ViewModels.ScheduleViewModel">
+    <Position X="24.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEAAAAAAACABCAAAERACAAAAAAAAAwAAAAIAABAAAA=</HashCode>
+      <FileName>ViewModels\ScheduleViewModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diploma.WPF.Views.AttendanceView">
+    <Position X="7.75" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\AttendanceView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Diploma.WPF.Views.EvernoteView">
+    <Position X="6" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAIQAACAAQAAAgAQIBBAAAAAAAIAAABAA=</HashCode>
+      <FileName>Views\EvernoteView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Diploma.WPF.Views.GradesStatsView" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Views\GradesStatsView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.WPF.Views.InformationView" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gEAAAAAgAAAAAAAIAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\InformationView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.WPF.Views.LoginView" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Views\LoginView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.WPF.Views.ProfileView" BaseTypeListCollapsed="true">
+    <Position X="6" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\ProfileView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.WPF.Views.ScheduleView" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="15.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Views\ScheduleView.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.WPF.MainWindow">
+    <Position X="11.25" Y="18" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Diploma.WPF.State.Navigators.Navigator" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAEACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>State\Navigators\Navigator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.WPF.Helpers.PasswordHelper">
+    <Position X="1" Y="12.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAIQAgEBAEAAAAAAIAAABAAAAAAgAAAICA=</HashCode>
+      <FileName>Helpers\PasswordHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Diploma.WPF.Controls.BindablePasswordBox" BaseTypeListCollapsed="true">
+    <Position X="6" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAEAAAAAAAAABACAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\BindablePasswordBox.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.WPF.Controls.DisplayAttendance" BaseTypeListCollapsed="true">
+    <Position X="13" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAgAAIAAAAACAgAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\DisplayAttendance.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.WPF.Controls.DisplayLecture" BaseTypeListCollapsed="true">
+    <Position X="9.5" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAhAAAAAAAAAAgAAIAAAAAAAgAAAAAAAAAAAAAIIAAA=</HashCode>
+      <FileName>Controls\DisplayLecture.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.WPF.Controls.DisplayNote" BaseTypeListCollapsed="true">
+    <Position X="4.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAECAAA=</HashCode>
+      <FileName>Controls\DisplayNote.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.WPF.Controls.DisplayNotebook" BaseTypeListCollapsed="true">
+    <Position X="7.75" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgEIAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\DisplayNotebook.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.WPF.Controls.NavigationBar" BaseTypeListCollapsed="true">
+    <Position X="11.25" Y="11.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controls\NavigationBar.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.WPF.Commands.EditCommand" BaseTypeListCollapsed="true">
+    <Position X="1" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAEAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\EditCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.WPF.Commands.EndEditCommand" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAEAAAAAAEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\EndEditCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.WPF.Commands.LoginCommand" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACCAAQQAEAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\LoginCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.WPF.Commands.NewNotebookCommand" BaseTypeListCollapsed="true">
+    <Position X="1" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAEAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\NewNotebookCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.WPF.Commands.NewNoteCommand" BaseTypeListCollapsed="true">
+    <Position X="2.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAEAACAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\NewNoteCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.WPF.Commands.ReloadGradesDataCommand" BaseTypeListCollapsed="true">
+    <Position X="4.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAQAAEAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Commands\ReloadGradesDataCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Diploma.WPF.Commands.UpdateCurrentViewModelCommand" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="19" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAACIAQAAEAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Commands\UpdateCurrentViewModelCommand.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="Diploma.WPF.State.Navigators.INavigator">
+    <Position X="2.25" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAEACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>State\Navigators\INavigator.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Diploma.WPF.State.Navigators.ViewType">
+    <Position X="4" Y="16.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEEAAAAAAAAAABAAAAAAAAEAAAAAAABAAAAAAQAA=</HashCode>
+      <FileName>State\Navigators\INavigator.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

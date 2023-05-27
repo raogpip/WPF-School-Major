@@ -72,10 +72,7 @@ namespace Diploma.WPF.Commands
                 {
                     _viewModel.ErrorMessage = "* Invalid username or password";
                 }
-
             }
-
-            
         }
     }
 }

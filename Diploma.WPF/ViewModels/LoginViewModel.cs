@@ -57,12 +57,15 @@ namespace Diploma.WPF.ViewModels
             set { buttonStudentIsChecked = value; OnPropertyChanged(nameof(ButtonStudentIsChecked)); if (value) ButtonTeacherIsChecked = false; }
         }
 
-
         //
 
         //-> Commands
 
         public ICommand LoginCommand { get; }
+
+        // 
+
+        //-> Constructor
 
         public LoginViewModel()
         {
@@ -70,7 +73,7 @@ namespace Diploma.WPF.ViewModels
             LoginCommand = new LoginCommand(this);
         }
 
-
+        //
 
     }
 }
