@@ -9,8 +9,8 @@ namespace Diploma.WPF.ViewModels
 
         //-> Fields
 
-        private string username = "vitalik";
-        private string password = "vitalik";
+        private string username;
+        private string password;
         private string errorMessage;
         private bool isViewVisible = true;
         private IStudentService studentService;

@@ -1,11 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
-using Microsoft.Extensions.Options;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Diploma.EntityFramework
 {
@@ -15,8 +9,7 @@ namespace Diploma.EntityFramework
         {
             var options = new DbContextOptionsBuilder<SchoolDbContext>();
             options.UseSqlServer("Server=.;Database=DiplomaDB;Trusted_Connection=True;TrustServerCertificate=True;MultipleActiveResultSets=true;");
-            return new SchoolDbContext(options.Options);    
+            return new SchoolDbContext(options.Options);
         }
     }
 }
-    

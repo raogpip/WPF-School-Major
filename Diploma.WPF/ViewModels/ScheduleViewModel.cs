@@ -88,20 +88,6 @@ namespace Diploma.WPF.ViewModels
         {
             using (SchoolDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
-
-                //шось таке
-                //select all lectures from table Lectures join Student_Lectures where Student.Id = CurrentUserAccout.Id
-                //var lectures = from lect in dbContext.Lectures
-                //              from stuLect in dbContext.Student_Lectures
-                //              where lect.Id == stuLect.LectureId && stuLect.StudentId == CurrentUserAccount.Id && lect.Date == SelectedDate
-                //              select new Lecture()
-                //              {
-                //                  Id = stuLect.LectureId,
-                //                  SubjectId = lect.SubjectId,
-                //                  TeacherId = lect.TeacherId,
-                //                  Date = lect.Date,
-                //                  AudienceNumber = lect.AudienceNumber
-                //              };
                 if (CurrentUserAccount.Role == "Student")
                 {
                     var lectures = from l in dbContext.Lectures

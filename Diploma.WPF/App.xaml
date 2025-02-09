@@ -12,9 +12,8 @@
                 <ResourceDictionary Source="/Styles/Common.xaml" />
                 <ResourceDictionary Source="/Styles/NavigationBar.xaml" />
                 <ResourceDictionary Source="/Styles/ScheduleWidget.xaml" />
-              
-            </ResourceDictionary.MergedDictionaries>
 
+            </ResourceDictionary.MergedDictionaries>
 
             <DataTemplate DataType="{x:Type viewmodels:ScheduleViewModel}">
                 <views:ScheduleView />
@@ -39,7 +38,6 @@
             <DataTemplate DataType="{x:Type viewmodels:EvernoteViewModel}">
                 <views:EvernoteView />
             </DataTemplate>
-
         </ResourceDictionary>
     </Application.Resources>
 </Application>

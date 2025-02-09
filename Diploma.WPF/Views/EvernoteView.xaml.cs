@@ -71,7 +71,6 @@ namespace Diploma.WPF.Views
                 contentRichTextBox.Selection.ApplyPropertyValue(FontWeightProperty, FontWeights.Bold);
             else
                 contentRichTextBox.Selection.ApplyPropertyValue(FontWeightProperty, FontWeights.Normal);
-
         }
 
         private async void Speech_Click(object sender, RoutedEventArgs e)

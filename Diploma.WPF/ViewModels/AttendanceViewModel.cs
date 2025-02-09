@@ -65,15 +65,7 @@ namespace Diploma.WPF.ViewModels
                                           SubjectName = l.SubjectName,
                                           IsPresent = sl.Attended
                                       };
-                    //dbContext.Student_Lectures
-                    //.Join(
-                    //    dbContext.Lectures,
-                    //    sl => sl.LectureId,
-                    //    lecture => lecture.Id,
-                    //    (sl, lecture) => new Attendance
-                    //    {
 
-                    //    }).ToList();
                     Attendances.Clear();
                     foreach (var attendance in attendances)
                     {

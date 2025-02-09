@@ -4,10 +4,6 @@ using Diploma.EntityFramework.Services.NoteProviders;
 using Diploma.WPF.State.Navigators;
 using Diploma.WPF.ViewModels;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace Diploma.WPF.Commands
@@ -18,6 +14,8 @@ namespace Diploma.WPF.Commands
 
         public static INotebookService notebookService = new DatabaseNotebookService(new SchoolDbContextFactory());
         public static INoteService noteService = new DatabaseNoteService(new SchoolDbContextFactory());
+
+
 
         private INavigator _navigator;
 
@@ -33,7 +31,7 @@ namespace Diploma.WPF.Commands
 
         public void Execute(object? parameter)
         {
-            if(parameter is string)
+            if (parameter is string)
             {
                 var viewType = (string)parameter;
                 switch (viewType)

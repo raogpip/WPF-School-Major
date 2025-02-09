@@ -29,7 +29,5 @@ namespace Diploma.WPF.State.Navigators
         }
 
         public ICommand UpdateCurrentViewModelCommand => new UpdateCurrentViewModelCommand(this);
-
-      
     }
 }

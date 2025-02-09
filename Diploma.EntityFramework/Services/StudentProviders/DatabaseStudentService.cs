@@ -19,8 +19,6 @@ namespace Diploma.EntityFramework.Services.StudentProviders
 
         public bool AuthenticateStudent(NetworkCredential credential)
         {
-            //bool validUser;
-            //string query = "SELECT * FROM dbo.Students WHERE Username = @p0 AND Password = @p1";
             using (SchoolDbContext dbContext = _dbContextFactory.CreateDbContext())
             {
                 Student student = dbContext.Students.SingleOrDefault(s => s.Username == credential.UserName && s.Password == credential.Password);
