@@ -30,8 +30,13 @@ Here are some notable methods and their purposes:
 - `GenerateJwtToken(User user)`: Creates a JWT token for authenticated sessions.
 
 ### Database Management
+The following database was created to manage key features of the program:
+![Database Schema](images/drawSQL.png)
+
 - `InitializeDatabase()`: Ensures database is properly set up and seeded with initial data.
 - `SaveChangesAsync()`: Saves changes to the database asynchronously to improve performance.
+
+
 
 ### Text Editor Features
 - `LoadTextFile(string filePath)`: Loads text content from a specified file.
