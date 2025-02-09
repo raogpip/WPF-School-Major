@@ -31,6 +31,7 @@ Here are some notable methods and their purposes:
 
 ### Database Management
 The following database was created to manage key features of the program:
+
 ![Database Schema](images/drawSQL.png)
 
 - `InitializeDatabase()`: Ensures database is properly set up and seeded with initial data.
